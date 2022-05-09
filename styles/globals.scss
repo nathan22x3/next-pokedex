@@ -1,0 +1,41 @@
+@use 'colors' as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  @each $name, $value in $pokemon-colors {
+    #{'--pokemon-' + $name}: $value;
+  }
+}
+
+@layer base {
+  body {
+    @apply font-exo;
+  }
+}
+
+@layer components {
+  .image {
+    @apply relative inline-block;
+
+    > span {
+      all: unset !important;
+      @apply flex w-full items-center #{!important};
+
+      > img {
+        all: unset !important;
+        @apply w-full #{!important};
+      }
+    }
+  }
+}
+
+@layer utilities {
+  @each $name, $value in $pokemon-colors {
+    [data-color='#{$name}'] {
+      background-color: var(#{'--pokemon-' + $name});
+    }
+  }
+}
