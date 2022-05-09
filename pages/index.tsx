@@ -16,9 +16,7 @@ export const getStaticProps: GetStaticProps<{ pokemons: Pokemon[] }> = async () 
   const pokemonClient = new PokemonClient();
   const { results } = await pokemonClient.listPokemons();
 
-  const pokemons = await Promise.all(
-    results.map(async ({ name }) => pokemonClient.getPokemonByName(name))
-  );
+  const pokemons = await Promise.all(results.map(async ({ name }) => pokemonClient.getPokemonByName(name)));
 
   return {
     props: { pokemons },
