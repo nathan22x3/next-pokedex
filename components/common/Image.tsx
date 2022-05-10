@@ -2,16 +2,23 @@ import type { ImageProps } from 'next/image';
 import NextImage from 'next/image';
 import classNames from 'classnames';
 
-const Image = ({ className, style, src, width, height, priority = true, draggable = false, ...rest }: ImageProps) => {
+const Image = ({
+  className,
+  style,
+  src,
+  width = 'auto',
+  height = 'auto',
+  layout = 'fill',
+  priority = true,
+  draggable = false,
+  ...rest
+}: ImageProps) => {
   return (
-    <span
-      className={classNames('image', className)}
-      style={{ width: width || 'auto', height: height || 'auto', ...style }}
-    >
+    <span className={classNames('image', className)} style={{ width, height, ...style }}>
       <NextImage
         {...{
           src,
-          layout: 'fill',
+          layout,
           priority,
           onDragStart: draggable ? () => null : (event) => event.preventDefault(),
         }}

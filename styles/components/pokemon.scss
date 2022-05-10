@@ -1,0 +1,13 @@
+.pokemon {
+  &__list {
+    @apply grid grid-cols-3;
+  }
+
+  &__card {
+    @apply bg-white rounded-lg;
+  }
+
+  &__badge {
+    @apply px-4 py-1.5 rounded-lg text-sm font-bold uppercase text-black/70;
+  }
+}

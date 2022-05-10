@@ -1,4 +1,5 @@
 @use 'colors' as *;
+@use 'components';
 
 @tailwind base;
 @tailwind components;
@@ -12,7 +13,7 @@
 
 @layer base {
   body {
-    @apply font-exo;
+    @apply font-exo bg-neutral-800;
   }
 }
 
