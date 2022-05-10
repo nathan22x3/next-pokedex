@@ -1,9 +1,8 @@
-import { Pokemon } from 'pokenode-ts';
 import { Image } from 'components/common';
 import { PokemonHelper, StringHelper } from 'helpers';
 
 type PokemonCardProps = {
-  pokemon: Pokemon;
+  pokemon: CustomizedPokemon;
 };
 
 const PokemonCard = ({ pokemon }: PokemonCardProps) => {
@@ -11,7 +10,7 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
 
   return (
     <div className="pokemon__card">
-      <Image src={PokemonHelper.getAnimatedSprite(sprites)} alt={name} unoptimized={true} />
+      <Image src={sprites.animated} alt={name} unoptimized={true} />
       <span>&#35;{PokemonHelper.formatId(id)}</span>
       <span>{StringHelper.capitalize(name)}</span>
       <div className="flex gap-x-2">

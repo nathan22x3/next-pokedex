@@ -1,7 +1,8 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import Head from 'next/head';
-import { Pokemon, PokemonClient } from 'pokenode-ts';
+import { PokemonClient } from 'pokenode-ts';
 import { PokemonCard } from 'components/pokemon';
+import { PokemonHelper } from 'helpers';
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ pokemons }) => {
   return (
@@ -18,11 +19,12 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ pokemo
   );
 };
 
-export const getStaticProps: GetStaticProps<{ pokemons: Pokemon[] }> = async () => {
+export const getStaticProps: GetStaticProps<{ pokemons: CustomizedPokemon[] }> = async () => {
   const pokemonClient = new PokemonClient();
   const { results } = await pokemonClient.listPokemons();
 
-  const pokemons = await Promise.all(results.map(async ({ name }) => pokemonClient.getPokemonByName(name)));
+  const _pokemons = await Promise.all(results.map(async ({ name }) => pokemonClient.getPokemonByName(name)));
+  const pokemons = _pokemons.map(PokemonHelper.toCustomizedPokemon);
 
   return {
     props: { pokemons },

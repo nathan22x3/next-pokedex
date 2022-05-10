@@ -34,7 +34,7 @@
 }
 
 @layer utilities {
-  @each $name, $value in $pokemon-colors {
+  @each $name in map-keys($pokemon-colors) {
     [data-color='#{$name}'] {
       background-color: var(#{'--pokemon-' + $name});
     }
