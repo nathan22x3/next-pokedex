@@ -15,6 +15,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "classnames": "~2.3.1",
     "next": "12.1.5",
     "next-compose-plugins": "~2.2.1",
     "next-pwa": "~5.5.2",

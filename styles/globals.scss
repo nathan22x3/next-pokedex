@@ -18,7 +18,7 @@
 
 @layer components {
   .image {
-    @apply relative inline-block;
+    @apply select-none overflow-hidden relative inline-block;
 
     > span {
       all: unset !important;

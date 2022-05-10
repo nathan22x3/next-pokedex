@@ -9,6 +9,7 @@ specifiers:
   '@typescript-eslint/parser': ~5.21.0
   autoprefixer: ~10.4.5
   axios: ~0.21.1
+  classnames: ~2.3.1
   eslint: 8.14.0
   eslint-config-next: 12.1.5
   eslint-config-prettier: ~8.5.0
@@ -29,6 +30,7 @@ specifiers:
   webpack: '>=5.9.0 <6.0.0'
 
 dependencies:
+  classnames: 2.3.1
   next: 12.1.5_f4f3p4qosjzyjuuwwqkhysggrq
   next-compose-plugins: 2.2.1
   next-pwa: 5.5.2_j7hdeytfhmq5pogszarundi7jy
@@ -2268,6 +2270,10 @@ packages:
     resolution: {integrity: sha512-p3KULyQg4S7NIHixdwbGX+nFHkoBiA4YQmyWtjb8XngSKV124nJmRysgAeujbUVb15vh+RvFUfCPqU7rXk+hZg==}
     engines: {node: '>=6.0'}
     dev: true
+
+  /classnames/2.3.1:
+    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
+    dev: false
 
   /clean-webpack-plugin/4.0.0_webpack@5.72.0:
     resolution: {integrity: sha512-WuWE1nyTNAyW5T7oNyys2EN0cfP2fdRxhxnIQWiAp0bMabPdHhoGxM8A6YL2GhqwgrPnnaemVE7nv5XJ2Fhh2w==}
